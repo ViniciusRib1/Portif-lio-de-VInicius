@@ -106,7 +106,7 @@ header {
 }
 
 .items a ion-icon {
-    margin-right: 10px;
+    margin-right: 10%;
 }
 .show-menu {
     display: flex ;
@@ -115,14 +115,28 @@ header {
     text-align: center;
 }
 footer {
-    position: fixed; /* Fixa o footer na parte inferior */
-    bottom: 0; /* Alinha o footer ao fundo da viewport */
-    width: 100%; /* Largura total */
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    height: 2%;
     background: rgb(25,25,25);
     background: linear-gradient(90deg, rgba(25,25,25,1) 0%, rgba(29,29,29,1) 33%, rgba(27,27,27,1) 81%, rgba(43,43,43,1) 100%);
     text-align: center;
-    padding: 10px 0; /* Espaçamento interno */
-    z-index: 0; /* Garante que o footer esteja acima de outros elementos fixos, se houver */
+    padding: 10px 0; 
+    z-index: 0; 
+    align-items: center;
+}
+footer h1 {
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    height: 2%;
+    background: rgb(25,25,25);
+    background: linear-gradient(90deg, rgba(25,25,25,1) 0%, rgba(29,29,29,1) 33%, rgba(27,27,27,1) 81%, rgba(43,43,43,1) 100%);
+    text-align: center;
+    padding: 10px 0; 
+    z-index: 0; 
+    align-items: center;
 }
 .modepage  {
     padding: 1%;
@@ -132,10 +146,10 @@ footer {
     transition: ease 2ms;
 }
 #perfil {
-    width: 400px;
-    height: 400px;
+    width: 20%;
+    height: 20%;
     border: solid rgb(255, 255, 255) 2px;
-    border-radius: 80%;
+    border-radius: 100%;
 }
 @media (max-width: 1400px) {
     .links  {
@@ -159,36 +173,46 @@ footer {
         left: 0;
         z-index: 1000; /* Garante que o menu fique acima de outros elementos */
         transition: ease 2s;
+        justify-content: center;
+        text-align: center;
     }
     
     .items {
         display: flex;
         flex-direction: column; /* Para que os links fiquem na vertical */
         width: 100%;
-        padding: 30%
+        justify-content: center;
+        text-align: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        top: 0px;
     }
     
     .items a {
-        padding: 30%; 
         display: flex;
         color: rgb(255, 255, 255);
         text-decoration: none;
         font-size: 80%;
         margin-right: 30%;
+        text-align: center;
+    }
+    .items a ion-icon {
+        margin-right: 50px;
     }
     .sobre {
         text-align: center;
     }
     
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .links {
         display: none;
     }
     .menulat {
         display: none;
         flex-direction: column;
-        width: 5%;
+        width: 40%;
         height: 100%; /* Preenche a altura total da viewport */
         background: rgb(25,25,25);
         background: linear-gradient(90deg, rgba(25,25,25,1) 0%, rgba(29,29,29,1) 33%, rgba(27,27,27,1) 81%, rgba(43,43,43,1) 100%);
@@ -210,10 +234,12 @@ footer {
     }
     
     .items a {
-        padding: 20%; /* Ajuste conforme necessário */
         color: rgb(255, 255, 255);
         text-decoration: none;
         font-size: 80%;
+    }
+    .items a ion-icon {
+        margin-right: 10%;
     }
     .sobre {
         text-align: center;
