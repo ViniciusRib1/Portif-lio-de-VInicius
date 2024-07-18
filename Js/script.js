@@ -20,12 +20,46 @@ function fechar() {
     fecharitem.style.display = "none"
 }
 
-function toggleSwitch() {
-    const light = document.getElementById("lightmode");
-    const dark = document.getElementById("darkmode");
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const themeLink = document.getElementById("theme-link");
+    const icon1 = document.getElementById("modepage");
+    const icon2 = document.getElementById("modepage2");
+    
+    if (savedTheme) {
+        themeLink.setAttribute("href", savedTheme);
+        if (savedTheme === "/Css/Light.css") {
+            icon1.style.display = "none";
+            icon2.style.display = "block";
+        } else {
+            icon1.style.display = "block";
+            icon2.style.display = "none";
+        }
+    }
+});
 
-    StyleSheet = light;
+function togglemode() {
+    const themeLink = document.getElementById("theme-link");
+    const darkTheme = "/Css/Dark.css";
+    const lightTheme = "/Css/Light.css";
+    const icon1 = document.getElementById("modepage");
+    const icon2 = document.getElementById("modepage2");
+    
+    if (themeLink.getAttribute("href") === darkTheme) {
+        themeLink.setAttribute("href", lightTheme);
+        localStorage.setItem("theme", lightTheme);
+        icon1.style.display = "none";
+        icon2.style.display = "block";
+    } else {
+        themeLink.setAttribute("href", darkTheme);
+        localStorage.setItem("theme", darkTheme);
+        icon1.style.display = "block";
+        icon2.style.display = "none";
+    }
 }
+
+
+
 
 function calcIdade() {
     let sobre = document.getElementById("sobre");
